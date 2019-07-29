@@ -5,7 +5,7 @@ var router=express.Router()
 var burger=require('../models/burger')
 
 
-
+module.exports=function(app){
 router.get('/',function(req,resp){
     burger.all(function(data){
         var handlebarObj={
@@ -22,8 +22,6 @@ router.post('/addBurger',function(req,resp){
     burger.create(
         name,devoured,
         function(data){
-          
-           
     })
     resp.redirect('/')
 
@@ -42,8 +40,7 @@ router.put('/update',function(req,resp){
     })
 
 })
+}
 
 
 
-
-module.exports=router

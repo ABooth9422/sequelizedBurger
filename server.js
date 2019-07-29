@@ -3,7 +3,7 @@ var path=require('path')
 var exphbs = require("express-handlebars");
 
 var app=express()
-
+var db= require('./models')
 
 app.use(express.urlencoded({ extended: true}))
 app.use(express.json());
@@ -14,7 +14,7 @@ app.engine("handlebars", exphbs({ defaultLayout: "main" }));
 app.set("view engine", "handlebars");
 
 
-var routes = require("./controllers/burgers_controller");
+require("./controllers/burgers_controller")(app);
 
 app.use(routes);
 
@@ -22,8 +22,10 @@ app.get("/",function(req,resp){
     resp.render('index')
 })
 
+db.sequelize.sync({force:true}).then(function(){
+    app.listen(process.env.PORT || 3000, function(){
+        console.log("server live in node")
+    })
 
-app.listen(process.env.PORT || 3000, function(){
-    console.log("server live in node")
 })
 
