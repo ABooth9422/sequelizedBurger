@@ -3,9 +3,9 @@
 
 
 module.exports=function(sequelize,DataTypes){
-    var Burger=sequelize.define("Burger",{
+    var Burger = sequelize.define("Burger",{
         name:{
-            type:DataTypes.String,
+            type:DataTypes.STRING,
             allowNull:false,
             validate:{
                 notNull: true,

@@ -16,7 +16,7 @@ app.set("view engine", "handlebars");
 
 require("./controllers/burgers_controller")(app);
 
-app.use(routes);
+
 
 app.get("/",function(req,resp){
     resp.render('index')
