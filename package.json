@@ -1,0 +1,27 @@
+{
+  "name": "burger",
+  "version": "1.0.0",
+  "description": "<h1 align=\"center\">Welcome to burger 👋</h1> <p>   <img alt=\"Version\" src=\"https://img.shields.io/npm/v/burger.svg\">   <a href=\"https://github.com/ABooth9422/burger/readme.md\">     <img alt=\"Documentation\" src=\"https://img.shields.io/badge/documentation-yes-brightgreen.svg\" target=\"_blank\" />   </a> </p>",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ABooth9422/burger.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ABooth9422/burger/issues"
+  },
+  "homepage": "https://github.com/ABooth9422/burger#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "express-handlebars": "^3.1.0",
+    "mysql": "^2.17.1",
+    "path": "^0.12.7"
+  }
+}

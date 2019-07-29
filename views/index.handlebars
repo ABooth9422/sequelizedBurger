@@ -1,0 +1,56 @@
+
+
+
+
+<h1 class="my-5 font-weight-bold text-center">Eat - Da - Burger!</h1>
+
+<h3 class="my-5 font-weight-bold text-center text-wrap">Below you will have the choices to eat a burger or you can Add a burger of your chosing before you devour it!</h3>
+<div class="container my-5">
+
+<div class="row">
+    <div class="col-lg-4">
+        <span class="badge badge-primary"><h5 style="text-decoration:underline;">Burgers available:</h5></span>
+        <div class="container d-flex justify-content-start text-black my-2"id="burgerList">
+            <ul>
+            
+             {{#each burger}}
+            {{#unless devoured}}
+            
+            <li style="text-decoration:underline;">ID:{{this.id}}
+            {{this.burger}}
+            <button class="devourBtn btn btn-success rounded-circle mx-1 mb-2" data-type={{this.id}}><img src="https://static.thenounproject.com/png/641156-200.png" width="30" height="30" alt="burger emoji"></button></li>
+                        
+            {{/unless}}
+            {{/each}}
+            </ul>
+        </div>
+        
+    </div>
+    <div class="col-lg-4">
+<img src="../public/assets/img/burger.jpg" class="border rounded-circle" alt="burger image" width="300px" height="300px">
+</div>
+<div class="col-lg-4">
+   <span class="badge badge-primary"><h5 style="text-decoration:underline;">Devoured:</h5></span>
+        <div class="container text-black text-left my-2"id="devouredList">
+            <ul>
+                    {{#each burger}}
+                    
+                        {{#if devoured}}
+                    	<li style="text-decoration:underline;">ID:{{this.id}}
+                        {{this.burger}}
+                        <button class="deleteBtn btn btn-danger rounded-circle mx-2" data-type={{this.id}}><img width="30"height="30"src="http://cdn.shopify.com/s/files/1/1061/1924/products/Poop_Emoji_7b204f05-eec6-4496-91b1-351acc03d2c7_grande.png?v=1480481059" alt="delete"></button></li>
+                        {{/if}}
+                    
+                    {{/each}}
+            </ul>
+        </div>
+        
+</div>
+  
+</div>
+</div>
+<h3 class="text-center my-3">Enter a name of a burger you would like to add.</h3>
+<div class="d-flex justify-content-center">
+<input type="text" id="burgerName"style="width:300px; height:auto;" placeholder="Burger name goes here!"></input>
+<button id= "submitBurger" class="btn btn-primary mx-2">Add Burger</button>
+</div>
