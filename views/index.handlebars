@@ -16,10 +16,11 @@
              {{#each burger}}
             {{#unless devoured}}
             
-            <li style="text-decoration:underline;">ID:{{this.id}}
+            <li>ID:{{this.id}}
             {{this.burgerName}}
+              <input type="text" size="8" class="mx-2" id="custName" data-type={{this.id}} placeholder="Customer?">      
             <button class="devourBtn btn btn-success rounded-circle mx-1 mb-2" data-type={{this.id}}><img src="https://static.thenounproject.com/png/641156-200.png" width="30" height="30" alt="burger emoji"></button></li>
-                        
+                    
             {{/unless}}
             {{/each}}
             </ul>

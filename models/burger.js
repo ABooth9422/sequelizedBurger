@@ -14,8 +14,8 @@ module.exports=function(sequelize,DataTypes){
             allowNull:false,
             validate:{
                 notNull: true,
-            },
-            defaultValue:"test"
+            }
+            
         },
         devoured:{
             type:DataTypes.BOOLEAN,
