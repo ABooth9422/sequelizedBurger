@@ -23,9 +23,9 @@ $(document).ready(function(){
                 type:'PUT',
                 data:update
             }).then(function(data){
-                location.reload();
+                location.reload()
             })
-         
+            
     })
 
     $(".deleteBtn").on('click',function(){
