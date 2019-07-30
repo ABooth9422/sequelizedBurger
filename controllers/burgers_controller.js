@@ -1,44 +1,63 @@
 var express=require('express')
 
-var router=express.Router()
 
-var burger=require('../models/burger')
+var db=require('../models')
 
 
 module.exports=function(app){
-router.get('/',function(req,resp){
-    burger.all(function(data){
+app.get('/',function(req,resp){
+    db.Burger.findAll({},{raw:true}).then(function(data){
+        
+
+        var burgerData=JSON.parse(JSON.stringify(data))
+        console.log(burgerData)
+      
         var handlebarObj={
-            burger:data
+          burger:burgerData
         };
+       
         resp.render('index',handlebarObj)
     })
+
 })
 
-router.post('/addBurger',function(req,resp){
-    var name = req.body.title
-    var devoured=req.body.devoured
-   
-    burger.create(
-        name,devoured,
-        function(data){
+app.post('/addBurger',function(req,resp){
+     var name = req.body.burgerName
+    var isDevoured=req.body.devoured
+  
+    db.Burger.create({
+        burgerName:name,
+        devoured:isDevoured
+    }
+    ).then(function(data){
+       
+        resp.status(201).end()
     })
+    
     resp.redirect('/')
 
 })
 
-router.delete('/delete',function(req,resp){
-    burger.delete(req.body.id,function(result){
+app.delete('/delete',function(req,resp){
+    // burger.delete(req.body.id,function(result){
+    //     resp.status(200).end()
+    // })
+    db.Burger.destroy({where:{id:req.body.id}}).then(function(data){
         resp.status(200).end()
     })
+
 })
 
-router.put('/update',function(req,resp){
+app.put('/update',function(req,resp){
     
-    burger.update(req.body.id,function(result){
-       resp.status(200).end()
-    })
+    console.log(req.body.devoured)
+    console.log(req.body.id)
 
+
+    db.Burger.update(req.body,{where:{id:req.body.id}}).then(function(data){
+            
+    })
+    resp.redirect('/')  
 })
 }
 

@@ -4,8 +4,8 @@ $(document).ready(function(){
     $('#submitBurger').on('click',function(){
         var name = $("#burgerName").val().trim()
         var newBurger={
-            title:name,
-            devoured:0
+            burgerName:name,
+            devoured:false
         }
     
     $.post('/addBurger',newBurger,function(data){
@@ -17,13 +17,15 @@ $(document).ready(function(){
 })
     $(".devourBtn").on('click',function(){ 
         var update ={
-             id:$(this).attr('data-type')}
+             id:$(this).attr('data-type'),
+                devoured:true}
             $.ajax("/update",{
                 type:'PUT',
                 data:update
             }).then(function(data){
                 location.reload();
             })
+         
     })
 
     $(".deleteBtn").on('click',function(){

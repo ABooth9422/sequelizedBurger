@@ -17,7 +17,7 @@
             {{#unless devoured}}
             
             <li style="text-decoration:underline;">ID:{{this.id}}
-            {{this.burger}}
+            {{this.burgerName}}
             <button class="devourBtn btn btn-success rounded-circle mx-1 mb-2" data-type={{this.id}}><img src="https://static.thenounproject.com/png/641156-200.png" width="30" height="30" alt="burger emoji"></button></li>
                         
             {{/unless}}
@@ -37,7 +37,7 @@
                     
                         {{#if devoured}}
                     	<li style="text-decoration:underline;">ID:{{this.id}}
-                        {{this.burger}}
+                        {{this.burgerName}}
                         <button class="deleteBtn btn btn-danger rounded-circle mx-2" data-type={{this.id}}><img width="30"height="30"src="http://cdn.shopify.com/s/files/1/1061/1924/products/Poop_Emoji_7b204f05-eec6-4496-91b1-351acc03d2c7_grande.png?v=1480481059" alt="delete"></button></li>
                         {{/if}}
                     

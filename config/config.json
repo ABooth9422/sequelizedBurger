@@ -4,23 +4,23 @@
     "password": "Wow0148407!",
     "database": "burger_db",
     "host": "127.0.0.1",
-    "dialect": "mysql",
-    "operatorsAliases": false
+    "dialect": "mysql"
+   
   },
   "test": {
     "username": "root",
     "password": null,
     "database": "database_test",
     "host": "127.0.0.1",
-    "dialect": "mysql",
-    "operatorsAliases": false
+    "dialect": "mysql"
+    
   },
   "production": {
     "username": "pcmhxq0rjvtzjzdl",
     "password": "w9ie96iuwrfl6bbc",
     "database": "pwpka19lax0js5h8",
     "host": "127.0.0.1",
-    "dialect": "mysql",
-    "operatorsAliases": false
+    "dialect": "mysql"
+   
   }
 }
