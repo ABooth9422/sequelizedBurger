@@ -19,7 +19,7 @@
     "username": "pcmhxq0rjvtzjzdl",
     "password": "w9ie96iuwrfl6bbc",
     "database": "pwpka19lax0js5h8",
-    "host": "mysql://pcmhxq0rjvtzjzdl:w9ie96iuwrfl6bbc@s3lkt7lynu0uthj8.cbetxkdyhwsb.us-east-1.rds.amazonaws.com:3306/pwpka19lax0js5h8",
+    "host": "s3lkt7lynu0uthj8.cbetxkdyhwsb.us-east-1.rds.amazonaws.com",
     "dialect": "mysql"
    
   }
