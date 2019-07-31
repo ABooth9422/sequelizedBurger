@@ -18,9 +18,10 @@ $(document).ready(function(){
 
 })
     $(".devourBtn").on('click',function(){ 
-        var customer=$("#custName").val().trim()
-        console.log(customer + "line 22")
+        var ID=$(this).attr('data-type')
+        var customer=$(`#custName${ID}`).val().trim()
        
+       console.log(this.customer+"line 23")
         if(customer===""){
             alert("customer name required")
             return
