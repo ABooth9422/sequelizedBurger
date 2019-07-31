@@ -6,12 +6,13 @@ var db=require('../models')
 
 module.exports=function(app){
 app.get('/',function(req,resp){
-    db.Burger.findAll({},{raw:true}).then(function(data){
+    db.Burger.findAll({include:db.Customer},{raw:true}).then(function(data){
         
         var burgerData=JSON.parse(JSON.stringify(data))
         var handlebarObj={
           burger:burgerData
         };
+        console.log(handlebarObj)
         resp.render('index',handlebarObj)
     })
 
@@ -40,13 +41,14 @@ app.delete('/delete',function(req,resp){
 })
 
 app.put('/update',function(req,resp){
-    console.log(req.body)
-    db.Burger.update(req.body.update,{where:{id:req.body.update.id}}).then(function(data){
-        resp.status(200).end()
-      
-    })
-    db.Customer.create(req.body.customerName).then(function(data){
-        resp.status(201).end()
+   
+    db.Customer.create(req.body.customerName).then(function(custData){
+        
+        req.body.update.CustomerId = custData.id;
+
+        db.Burger.update(req.body.update,{where:{id:req.body.update.id}}).then(function(data){
+            resp.status(200).end()
+        })
     })
   
 })

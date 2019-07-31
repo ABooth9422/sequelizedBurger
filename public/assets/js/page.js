@@ -20,6 +20,7 @@ $(document).ready(function(){
     $(".devourBtn").on('click',function(){ 
         var customer=$("#custName").val().trim()
         console.log(customer + "line 22")
+       
         if(customer===""){
             alert("customer name required")
             return
