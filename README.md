@@ -13,11 +13,24 @@
 ## Burger
 ![](public/assets/img/burgermain.png)
 
+The purpose of this application is to make a full-stack application with linking it to MySQL. Instead of our previous
+
+project where we made our own ORM we are instituting sequelize as our ORM for the project. Depending on the users input
+
+we are rendering responses with our server. Our server is then rendering our content through handlebars depending on
+
+the route that is hit the server will determine what to render to the page.
+
 ## Install
 
 ```sh
 web based application visit site to begin
 ```
+## Technologies Used
+<li>sequelize</li>
+<li>handlebars</li>
+<li>express</li>
+<li>path</li>
 
 ## Usage!
 
